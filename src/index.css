@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Michroma&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
+@import "tailwindcss";
+
+h2 , h1 , h3 , h4 , h5{
+  font-family: 'Michroma', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0 #000; /* subtle shadow */
+}
+p , a , span{
+  font-family:  'Jost' , sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+:root {
+  --bg-main: #3b031d;
+  --bg-card: #5c0931;
+  --accent-rose: #b70156;
+  --text-primary: #ffffff;
+}
+
+/* Usage Example */
+body {
+  background-color: var(--bg-main);
+}
+
+
+/* index.css ya custom.css me add karo */
+.bg-main {
+  background-color: var(--bg-main);
+}
+
+.bg-card {
+  background-color: var(--bg-card);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.accent-rose {
+  background-color: var(--accent-rose);
+  color: var(--text-primary); /* agar button text white chahiye */
+}
+.accent-text{
+  color: var(--accent-rose);
+}
