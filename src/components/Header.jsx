@@ -15,22 +15,53 @@ const Header = () => {
     { name: "Contact", icon: <RiContactsBook3Fill />, id: "contact" },
   ];
 
-  // --- Scroll Function (Offset ke saath) ---
+  // --- Scroll Observer ---
+  useEffect(() => {
+    const observers = [];
+
+    navLinks.forEach((link) => {
+      const element = document.getElementById(link.id);
+      if (!element) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveTab(link.name);
+            }
+          });
+        },
+        {
+          threshold: 0.4, // Section 40% visible ho tab active ho
+          rootMargin: "-80px 0px 0px 0px", // Navbar height ka offset
+        }
+      );
+
+      observer.observe(element);
+      observers.push(observer);
+    });
+
+    // Cleanup
+    return () => {
+      observers.forEach((obs) => obs.disconnect());
+    };
+  }, []);
+
+  // --- Scroll Function ---
   const scrollToSection = (id, name) => {
     const element = document.getElementById(id);
     if (element) {
-      const headerOffset = 100; // Navbar ki height ke mutabiq offset
+      const headerOffset = 100;
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
       });
 
-      setActiveTab(name); // Tab highlight change karein
-      setIsOpen(false); // Mobile menu band karein
+      setActiveTab(name);
+      setIsOpen(false);
     }
   };
 
@@ -43,11 +74,10 @@ const Header = () => {
             <li
               key={link.name}
               onClick={() => scrollToSection(link.id, link.name)}
-              className={`flex items-center gap-2 px-5 py-2 rounded-full transition-all duration-500 cursor-pointer select-none ${
-                activeTab === link.name
+              className={`flex items-center gap-2 px-5 py-2 rounded-full transition-all duration-500 cursor-pointer select-none ${activeTab === link.name
                   ? "bg-[#c1035c] text-white shadow-[0_0_20px_rgba(193,3,92,0.6)] scale-105"
                   : "text-gray-400 hover:text-white hover:bg-white/5"
-              }`}
+                }`}
             >
               <span className="text-xl">{link.icon}</span>
               <span className="text-sm font-semibold tracking-wide">
@@ -73,18 +103,20 @@ const Header = () => {
 
       {/* 3. Mobile Dropdown Menu */}
       <div
-        className={`absolute top-24 left-4 right-4 bg-[#3b031d] border border-white/10 rounded-3xl p-4 transition-all duration-300 md:hidden shadow-2xl ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10 pointer-events-none"}`}
+        className={`absolute top-24 left-4 right-4 bg-[#3b031d] border border-white/10 rounded-3xl p-4 transition-all duration-300 md:hidden shadow-2xl ${isOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-10 pointer-events-none"
+          }`}
       >
         <ul className="flex flex-col gap-2">
           {navLinks.map((link) => (
             <li
               key={link.name}
               onClick={() => scrollToSection(link.id, link.name)}
-              className={`flex items-center gap-4 p-4 rounded-xl transition-all cursor-pointer ${
-                activeTab === link.name
+              className={`flex items-center gap-4 p-4 rounded-xl transition-all cursor-pointer ${activeTab === link.name
                   ? "bg-[#c1035c] text-white"
                   : "text-gray-400 active:bg-white/5"
-              }`}
+                }`}
             >
               <span className="text-2xl">{link.icon}</span>
               <span className="text-lg font-medium">{link.name}</span>
