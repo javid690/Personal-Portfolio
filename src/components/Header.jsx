@@ -75,8 +75,8 @@ const Header = () => {
               key={link.name}
               onClick={() => scrollToSection(link.id, link.name)}
               className={`flex items-center gap-2 px-5 py-2 rounded-full transition-all duration-500 cursor-pointer select-none ${activeTab === link.name
-                  ? "bg-[#c1035c] text-white shadow-[0_0_20px_rgba(193,3,92,0.6)] scale-105"
-                  : "text-gray-400 hover:text-white hover:bg-white/5"
+                ? "bg-[#c1035c] text-white shadow-[0_0_20px_rgba(193,3,92,0.6)] scale-105"
+                : "text-gray-400 hover:text-white hover:bg-white/5"
                 }`}
             >
               <span className="text-xl">{link.icon}</span>
@@ -104,8 +104,8 @@ const Header = () => {
       {/* 3. Mobile Dropdown Menu */}
       <div
         className={`absolute top-24 left-4 right-4 bg-[#3b031d] border border-white/10 rounded-3xl p-4 transition-all duration-300 md:hidden shadow-2xl ${isOpen
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-10 pointer-events-none"
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 -translate-y-10 pointer-events-none"
           }`}
       >
         <ul className="flex flex-col gap-2">
@@ -114,8 +114,8 @@ const Header = () => {
               key={link.name}
               onClick={() => scrollToSection(link.id, link.name)}
               className={`flex items-center gap-4 p-4 rounded-xl transition-all cursor-pointer ${activeTab === link.name
-                  ? "bg-[#c1035c] text-white"
-                  : "text-gray-400 active:bg-white/5"
+                ? "bg-[#c1035c] text-white"
+                : "text-gray-400 active:bg-white/5"
                 }`}
             >
               <span className="text-2xl">{link.icon}</span>

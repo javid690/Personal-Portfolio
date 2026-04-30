@@ -2,6 +2,7 @@ import React from "react";
 import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
 import project3 from "../assets/project3.png";
+import project4 from '../assets/project4.png'
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
@@ -32,6 +33,15 @@ const Projects = () => {
       skills: ["Odoo", "HTML", "JavaScript"],
       github: "#",
       live: "https://erp.gumovastrecha.cz/",
+    },
+    {
+      id: 4,
+      title: "Tabsap – Custom Frontend Website",
+      desc: "Built a responsive company website using WordPress with custom HTML, CSS, and JavaScript for enhanced UI and user experience..",
+      img: project4,
+      skills: ["Elementor", "HTML", "JavaScript"],
+      github: "#",
+      live: "https://tabsap.com/",
     },
   ];
 
