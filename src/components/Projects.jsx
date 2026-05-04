@@ -3,12 +3,22 @@ import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
 import project3 from "../assets/project3.png";
 import project4 from '../assets/project4.png'
+import project5 from '../assets/project5.png'
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
   const projectsData = [
     {
       id: 1,
+      title: "Admin Dashboard",
+      desc: "A modern admin dashboard built with React, featuring analytics charts, data tables, search, filtering, pagination, and a fully responsive dark/light UI.",
+      img: project5,
+      skills: ["React", "Tailwind", "JavaScript", "Chart.js"],
+      github: "https://github.com/javid690/react-admin-pro",
+      live: "https://react-admin-netlifyapp.netlify.app/",
+    },
+    {
+      id: 2,
       title: "E-Commerce Website",
       desc: "Modern e-commerce app built with React, featuring dynamic UI and smooth user experience.",
       img: project1,
@@ -17,7 +27,7 @@ const Projects = () => {
       live: "https://uomoecommerce.netlify.app/",
     },
     {
-      id: 2,
+      id: 3,
       title: "JS Storefront",
       desc: "E-commerce website built with pure JavaScript, focusing on core logic and DOM manipulation.",
       img: project2,
@@ -26,7 +36,7 @@ const Projects = () => {
       live: "https://e-commerce-project-ten-olive.vercel.app/",
     },
     {
-      id: 3,
+      id: 4,
       title: "Odoo Custom ERP",
       desc: "E-commerce website built on Odoo with custom code for enhanced design and functionality.",
       img: project3,
@@ -35,7 +45,7 @@ const Projects = () => {
       live: "https://erp.gumovastrecha.cz/",
     },
     {
-      id: 4,
+      id: 5,
       title: "Tabsap – Custom Frontend Website",
       desc: "Built a responsive company website using WordPress with custom HTML, CSS, and JavaScript for enhanced UI and user experience..",
       img: project4,
