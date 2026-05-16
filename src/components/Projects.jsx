@@ -14,8 +14,8 @@ const Projects = () => {
       desc: "A modern admin dashboard built with React, featuring analytics charts, data tables, search, filtering, pagination, and a fully responsive dark/light UI.",
       img: project5,
       skills: ["React", "Tailwind", "JavaScript", "Chart.js"],
-      github: "https://github.com/javid690/react-admin-pro",
-      live: "https://react-admin-netlifyapp.netlify.app/",
+      github: "https://github.com/javid690/Product-dashboard",
+      live: "https://product-dahboard.netlify.app/",
     },
     {
       id: 2,
