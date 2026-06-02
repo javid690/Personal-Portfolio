@@ -1,65 +1,103 @@
-import React from "react";
+import React, { useState } from "react";
 import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
 import project3 from "../assets/project3.png";
 import project4 from '../assets/project4.png'
 import project5 from '../assets/project5.png'
+import project6 from '../assets/project6.png'
+import project7 from '../assets/project7.png'
+
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
+  const [activeTab, setActiveTab] = useState("All");
+
+  const tabs = ["All", "React", "JavaScript", "Odoo", "WordPress"];
+
   const projectsData = [
     {
       id: 1,
+      title: "Odheyati — E-Commerce Qurbani Platform",
+      desc: "Full-stack e-commerce platform for Qurbani services, enabling online ordering, payment processing, and delivery management with a seamless user experience",
+      img: project6,
+      skills: ["Node.js", "React.js", "Express.js"],
+      category: "React",
+      github: "https://github.com/javid690/Product-dashboard",
+      live: "https://odheyati.com/",
+    },
+    {
+      id: 2,
       title: "Admin Dashboard",
       desc: "A modern admin dashboard built with React, featuring analytics charts, data tables, search, filtering, pagination, and a fully responsive dark/light UI.",
       img: project5,
       skills: ["React", "Tailwind", "JavaScript", "Chart.js"],
-      github: "https://github.com/javid690/Product-dashboard",
+      category: "React",
+      github: "#",
       live: "https://product-dahboard.netlify.app/",
     },
     {
-      id: 2,
+      id: 3,
       title: "E-Commerce Website",
       desc: "Modern e-commerce app built with React, featuring dynamic UI and smooth user experience.",
       img: project1,
       skills: ["React", "CSS", "Tailwind"],
+      category: "React",
       github: "https://github.com/javid690/ecommerce-react-store",
       live: "https://uomoecommerce.netlify.app/",
     },
     {
-      id: 3,
+      id: 4,
       title: "JS Storefront",
       desc: "E-commerce website built with pure JavaScript, focusing on core logic and DOM manipulation.",
       img: project2,
       skills: ["HTML", "CSS", "JavaScript"],
+      category: "JavaScript",
       github: "https://github.com/javid690/E-commerce-Project",
       live: "https://e-commerce-project-ten-olive.vercel.app/",
     },
     {
-      id: 4,
+      id: 5,
       title: "Odoo Custom ERP",
       desc: "E-commerce website built on Odoo with custom code for enhanced design and functionality.",
       img: project3,
       skills: ["Odoo", "HTML", "JavaScript"],
+      category: "Odoo",
       github: "#",
       live: "https://erp.gumovastrecha.cz/",
     },
     {
-      id: 5,
+      id: 6,
       title: "Tabsap – Custom Frontend Website",
-      desc: "Built a responsive company website using WordPress with custom HTML, CSS, and JavaScript for enhanced UI and user experience..",
+      desc: "Built a responsive company website using WordPress with custom HTML, CSS, and JavaScript for enhanced UI and user experience.",
       img: project4,
       skills: ["Elementor", "HTML", "JavaScript"],
+      category: "WordPress",
       github: "#",
       live: "https://tabsap.com/",
     },
+    {
+      id: 7,
+      title: "Enterprise Management System (EMS)",
+      desc: "A powerful enterprise management system built with React.js, Redux Toolkit, and Tailwind CSS for seamless business operations.",
+      img: project7,
+      skills: ["React.js", "Redux Toolkit", "Tailwind CSS"],
+      category: "React",
+      github: "#",
+      live: "http://ems.tabsap.com/",
+    },
   ];
+
+  const filteredProjects =
+    activeTab === "All"
+      ? projectsData
+      : projectsData.filter((p) => p.category === activeTab);
 
   return (
     <section id="projects" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section - Centered */}
-        <div className="text-center mb-16 space-y-4">
+
+        {/* Header Section */}
+        <div className="text-center mb-12 space-y-4">
           <h2 className="accent-text text-4xl md:text-5xl font-bold tracking-tight uppercase">
             My Projects
           </h2>
@@ -71,17 +109,34 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* 3D Projects Grid */}
+        {/* Filter Tabs */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-widest transition-all duration-300 border
+                ${activeTab === tab
+                  ? "bg-[#e6006d] text-white border-[#e6006d] shadow-[0_0_20px_rgba(230,0,109,0.5)] scale-105"
+                  : "bg-white/5 text-gray-400 border-white/10 hover:border-[#e6006d]/50 hover:text-white hover:bg-[#5c0931]/30"
+                }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projectsData.map((project) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.id}
               className="group relative bg-[#5c0931]/20 border border-white/10 rounded-[2.5rem] p-6 transition-all duration-500 hover:-translate-y-4 hover:bg-[#5c0931]/40 hover:shadow-[0_30px_60px_rgba(0,0,0,0.6)] cursor-default overflow-hidden"
             >
-              {/* Background Glow */}
+              {/* Top Glow on Hover */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#e6006d] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
-              {/* Project Image Container */}
+              {/* Project Image */}
               <div className="relative overflow-hidden rounded-2xl mb-6 shadow-xl">
                 <img
                   src={project.img}
@@ -139,6 +194,13 @@ const Projects = () => {
             </div>
           ))}
         </div>
+
+        {/* Empty State */}
+        {filteredProjects.length === 0 && (
+          <div className="text-center py-20 text-gray-500 text-lg">
+            No projects found in this category.
+          </div>
+        )}
       </div>
     </section>
   );
