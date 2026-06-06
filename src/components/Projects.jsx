@@ -6,24 +6,25 @@ import project4 from '../assets/project4.png'
 import project5 from '../assets/project5.png'
 import project6 from '../assets/project6.png'
 import project7 from '../assets/project7.png'
+import project8 from '../assets/project8.png'
 
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("All");
 
-  const tabs = ["All", "React", "JavaScript", "Odoo", "WordPress"];
+  const tabs = ["All", "React", "JavaScript", "Odoo", "WordPress", "MERN Stack"];
 
   const projectsData = [
     {
       id: 1,
-      title: "Odheyati — E-Commerce Qurbani Platform",
-      desc: "Full-stack e-commerce platform for Qurbani services, enabling online ordering, payment processing, and delivery management with a seamless user experience",
-      img: project6,
-      skills: ["Node.js", "React.js", "Express.js"],
-      category: "React",
-      github: "https://github.com/javid690/Product-dashboard",
-      live: "https://odheyati.com/",
+      title: "Eventora – Full Stack Event Booking Platform",
+      desc: "MERN-stack event management system featuring OTP authentication, event discovery, and booking workflows.",
+      img: project8,
+      skills: ["Node.js", "React.js", "Express.js", "MongoDB"],
+      category: "MERN Stack",
+      github: "https://github.com/javid690/event-booking",
+      live: "#",
     },
     {
       id: 2,

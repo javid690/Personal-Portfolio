@@ -2,7 +2,9 @@ import React from "react";
 import banner from "../assets/me.png";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaGithub } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
-
+import { FaWordpress, FaBootstrap } from "react-icons/fa";
+import { SiElementor, SiRedux } from "react-icons/si";
+import { MdOutlineIntegrationInstructions } from "react-icons/md";
 const About = () => {
   const skills = [
     { name: "HTML", icon: <FaHtml5 />, color: "text-[#E34F26]" },
@@ -11,6 +13,11 @@ const About = () => {
     { name: "React", icon: <FaReact />, color: "text-[#61DAFB]" },
     { name: "GitHub", icon: <FaGithub />, color: "text-[#181717]" },
     { name: "Tailwind", icon: <SiTailwindcss />, color: "text-[#38BDF8]" },
+    { name: "WordPress", icon: <FaWordpress />, color: "text-[#21759B]" },
+    { name: "Elementor", icon: <SiElementor />, color: "text-[#92003B]" },
+    { name: "Custom ERP", icon: <MdOutlineIntegrationInstructions />, color: "text-[#FF6B35]" },
+    { name: "Redux", icon: <SiRedux />, color: "text-[#764ABC]" },
+    { name: "Bootstrap", icon: <FaBootstrap />, color: "text-[#7952B3]" },
   ];
   return (
     <section id="about" className="py-20 px-6 lg:px-0">

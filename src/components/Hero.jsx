@@ -42,7 +42,7 @@ const Hero = () => {
               <FaEnvelope /> Hire Me
             </button>
             <button
-              onClick={() => window.open("/cv.pdf", "_blank")}
+              onClick={() => window.open("/cv1.pdf", "_blank")}
               className="flex cursor-pointer items-center gap-2 bg-white/5 hover:bg-white/10 text-white border border-white/10 px-8 py-3 rounded-xl font-bold transition-all"
             >
               <FaDownload /> Download CV
