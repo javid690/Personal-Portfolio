@@ -7,6 +7,7 @@ import project5 from '../assets/project5.png'
 import project6 from '../assets/project6.png'
 import project7 from '../assets/project7.png'
 import project8 from '../assets/project8.png'
+import project9 from '../assets/products.png'
 
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
@@ -16,6 +17,16 @@ const Projects = () => {
   const tabs = ["All", "React", "JavaScript", "Odoo", "WordPress", "MERN Stack"];
 
   const projectsData = [
+    {
+      id: 0,
+      title: "Modern MERN E-Commerce Platform ",
+      desc: "Built a modern MERN Stack E-Commerce application featuring authentication, cart management, protected checkout, order tracking, and automated email notifications with responsive UI.",
+      img: project9,
+      skills: ["Node.js", "React.js", "Express.js", "MongoDB"],
+      category: "MERN Stack",
+      github: "https://github.com/javid690/mern-ecommerce-platform",
+      live: "#",
+    },
     {
       id: 1,
       title: "Eventora – Full Stack Event Booking Platform",
