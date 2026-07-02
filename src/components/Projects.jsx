@@ -29,7 +29,7 @@ const Projects = () => {
     },
     {
       id: 1,
-      title: "Tabsap – Custom Frontend Website",
+      title: "Enterprise Brand Experience Platform",
       desc: "Built a responsive company website using WordPress with custom HTML, CSS, and JavaScript for enhanced UI and user experience.",
       img: project4,
       skills: ["Elementor", "HTML", "JavaScript"],
@@ -166,7 +166,7 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-[200px] object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                <div className="absolute inset-0 bg-black/40 opacity-0 opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[4px]">
                   <p className="text-white font-bold text-sm tracking-widest uppercase">
                     View Details
                   </p>
