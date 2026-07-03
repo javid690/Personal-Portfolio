@@ -1,17 +1,8 @@
 import React, { useState } from "react";
-import project1 from "../assets/project1.png";
-import project2 from "../assets/project2.png";
-import project3 from "../assets/project3.png";
-import project4 from '../assets/project4.png'
-import project5 from '../assets/project5.png'
-import project6 from '../assets/project6.png'
-import project7 from '../assets/project7.png'
-import project8 from '../assets/project8.png'
-import project9 from '../assets/products.png'
-
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaCode } from "react-icons/fa";
 
 const Projects = () => {
+
   const [activeTab, setActiveTab] = useState("All");
 
   const tabs = ["All", "React", "JavaScript", "Odoo", "WordPress", "MERN Stack"];
@@ -21,7 +12,6 @@ const Projects = () => {
       id: 0,
       title: "Odheyati — E-Commerce Qurbani Platform",
       desc: "Full-stack e-commerce platform built with Node.js, Express.js & React.js, enabling online ordering, payment processing, and delivery management",
-      img: project6,
       skills: ["Node.js", "React.js", "Express.js", "MongoDB"],
       category: "React",
       github: "#",
@@ -29,9 +19,17 @@ const Projects = () => {
     },
     {
       id: 1,
+      title: "Real Estate Property Portal (UAE & Pakistan)",
+      desc: "Propertians – A real estate marketplace built with Next.js (React), featuring dynamic property listings and search filters powered by a REST API",
+      skills: ["Next.js (React Framework)", "React.js", "REST API Integration"],
+      category: "React",
+      github: "#",
+      live: "https://www.propertians.com/ae/en",
+    },
+    {
+      id: 2,
       title: "Enterprise Brand Experience Platform",
       desc: "Built a responsive company website using WordPress with custom HTML, CSS, and JavaScript for enhanced UI and user experience.",
-      img: project4,
       skills: ["Elementor", "HTML", "JavaScript"],
       category: "WordPress",
       github: "#",
@@ -41,7 +39,6 @@ const Projects = () => {
       id: 3,
       title: "Enterprise Management System (EMS)",
       desc: "A powerful enterprise management system built with React.js, Redux Toolkit, and Tailwind CSS for seamless business operations.",
-      img: project7,
       skills: ["React.js", "Redux Toolkit", "Tailwind CSS"],
       category: "React",
       github: "#",
@@ -51,7 +48,6 @@ const Projects = () => {
       id: 4,
       title: "Modern MERN E-Commerce Platform ",
       desc: "Built a modern MERN Stack E-Commerce application featuring authentication, cart management, protected checkout, order tracking, and automated email notifications with responsive UI.",
-      img: project9,
       skills: ["Node.js", "React.js", "Express.js", "MongoDB"],
       category: "MERN Stack",
       github: "https://github.com/javid690/mern-ecommerce-platform",
@@ -61,7 +57,6 @@ const Projects = () => {
       id: 5,
       title: "Eventora – Full Stack Event Booking Platform",
       desc: "MERN-stack event management system featuring OTP authentication, event discovery, and booking workflows.",
-      img: project8,
       skills: ["Node.js", "React.js", "Express.js", "MongoDB"],
       category: "MERN Stack",
       github: "https://github.com/javid690/event-booking",
@@ -71,7 +66,6 @@ const Projects = () => {
       id: 6,
       title: "Admin Dashboard",
       desc: "A modern admin dashboard built with React, featuring analytics charts, data tables, search, filtering, pagination, and a fully responsive dark/light UI.",
-      img: project5,
       skills: ["React", "Tailwind", "JavaScript", "Chart.js"],
       category: "React",
       github: "#",
@@ -81,7 +75,6 @@ const Projects = () => {
       id: 7,
       title: "E-Commerce Website",
       desc: "Modern e-commerce app built with React, featuring dynamic UI and smooth user experience.",
-      img: project1,
       skills: ["React", "CSS", "Tailwind"],
       category: "React",
       github: "https://github.com/javid690/ecommerce-react-store",
@@ -91,7 +84,6 @@ const Projects = () => {
       id: 8,
       title: "JS Storefront",
       desc: "E-commerce website built with pure JavaScript, focusing on core logic and DOM manipulation.",
-      img: project2,
       skills: ["HTML", "CSS", "JavaScript"],
       category: "JavaScript",
       github: "https://github.com/javid690/E-commerce-Project",
@@ -101,7 +93,6 @@ const Projects = () => {
       id: 9,
       title: "Odoo Custom ERP",
       desc: "E-commerce website built on Odoo with custom code for enhanced design and functionality.",
-      img: project3,
       skills: ["Odoo", "HTML", "JavaScript"],
       category: "Odoo",
       github: "#",
@@ -159,14 +150,19 @@ const Projects = () => {
               {/* Top Glow on Hover */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#e6006d] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
-              {/* Project Image */}
-              <div className="relative overflow-hidden rounded-2xl mb-6 shadow-xl">
-                <img
-                  src={project.img}
-                  alt={project.title}
-                  className="w-full h-[200px] object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/40 opacity-0 opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[4px]">
+              {/* Code Icon Placeholder (replaces image) */}
+              <div className="relative overflow-hidden rounded-2xl mb-6 shadow-xl h-[200px] bg-gradient-to-br from-[#5c0931]/40 to-[#2a0417]/60 border border-white/5 flex items-center justify-center">
+
+                {/* Category Badge - top right */}
+                <span className="absolute top-4 right-4 z-10 bg-[#e6006d] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(230,0,109,0.5)]">
+                  {project.category}
+                </span>
+
+                {/* Code Icon */}
+                <FaCode className="text-[#e6006d]/50 text-6xl group-hover:text-[#e6006d]/80 group-hover:scale-110 transition-all duration-500" />
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[4px]">
                   <p className="text-white font-bold text-sm tracking-widest uppercase">
                     View Details
                   </p>

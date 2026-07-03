@@ -13,7 +13,6 @@ const About = () => {
     { name: "React", icon: <FaReact />, color: "text-[#61DAFB]" },
     { name: "GitHub", icon: <FaGithub />, color: "text-[#181717]" },
     { name: "Tailwind", icon: <SiTailwindcss />, color: "text-[#38BDF8]" },
-    { name: "WordPress", icon: <FaWordpress />, color: "text-[#21759B]" },
     { name: "Elementor", icon: <SiElementor />, color: "text-[#92003B]" },
     { name: "Custom ERP", icon: <MdOutlineIntegrationInstructions />, color: "text-[#FF6B35]" },
     { name: "Redux", icon: <SiRedux />, color: "text-[#764ABC]" },
@@ -33,22 +32,26 @@ const About = () => {
 
           <div className="space-y-6 text-gray-300 text-lg leading-relaxed font-light">
             <p>
-              I am a passionate{" "}
+              I am a spirited and vigorous{" "}
               <span className="text-white font-semibold">
-                Front End Developer
+                React JS Developer
               </span>{" "}
-              with a love for building clean and responsive websites.
+              who is eager to deal with challenging tasks to produce optimal
+              and reliable solutions using analytical skills.
             </p>
             <p>
-              I specialize in turning design concepts into fully functional and
-              user-friendly interfaces, focusing on modern web design and
-              interactive experiences.
+              Well-versed in technology and writing clean, efficient code,
+              with a proven track record of adding continuous value to my
+              team's performance by delivering usable and scalable front-end
+              solutions. I have strong hands-on experience in building
+              modern, responsive web applications using React JS.
             </p>
             <p className="border-l-4 border-wine-accent/50 pl-4 italic bg-white/5 py-4 rounded-r-xl">
               "Turning ideas into reality with pixel-perfect design and seamless
               digital experiences."
             </p>
           </div>
+
 
           {/* Skills 3D Grid */}
           <div className="pt-6">

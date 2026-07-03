@@ -31,9 +31,8 @@ const Hero = () => {
           </h3>
 
           <p className="text-gray-400 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-            Crafting modern, responsive websites with clean code and
-            pixel-perfect design. Passionate about building user-friendly
-            interfaces and turning ideas into reality.
+            Building scalable front-end architectures with clean, maintainable code and a strong focus on system design and performance. With 1+ year of hands-on experience in React JS, I turn complex requirements into efficient, user-centric, and production-ready web applications.
+
           </p>
 
           {/* Action Buttons */}
@@ -42,7 +41,7 @@ const Hero = () => {
               <FaEnvelope /> Hire Me
             </button>
             <button
-              onClick={() => window.open("/cv1.pdf", "_blank")}
+              onClick={() => window.open("/cv2.pdf", "_blank")}
               className="flex cursor-pointer items-center gap-2 bg-white/5 hover:bg-white/10 text-white border border-white/10 px-8 py-3 rounded-xl font-bold transition-all"
             >
               <FaDownload /> Download CV
